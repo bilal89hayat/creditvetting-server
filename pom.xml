@@ -168,7 +168,7 @@
 				<configuration>
 					<instructions>
 						<!-- <Bundle-SymbolicName></Bundle-SymbolicName> -->
-						<Bundle-Name>Demo - Service</Bundle-Name>
+						<Bundle-Name>Credit Vetting - Server</Bundle-Name>
 					</instructions>
 				</configuration>
 			</plugin>
