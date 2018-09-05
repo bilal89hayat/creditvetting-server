@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.telkom.creditvetting.transunion.processor.TransUnionProcessor;
+import com.telkom.processor.AVSResponseProcessor;
 import com.telkom.processor.SimpleProcessor;
 
 
@@ -31,8 +32,10 @@ public class SimpleRoute extends RouteBuilder{
 				      // .setHeader(Exchange.CONTENT_TYPE, constant("text/plain"))
 				       // .to("http://localhost:9002/transunionservice/processCreditWorthyResponse?bridgeEndpoint=true")
 		        .when()
-                       .simple("${headers.operationName} == 'runAVS'")   
+                       .simple("${headers.operationName} == 'runAVS'")  
+                       .process(new AVSResponseProcessor())
 	                   .end();
+		       
 		
 	}
 
