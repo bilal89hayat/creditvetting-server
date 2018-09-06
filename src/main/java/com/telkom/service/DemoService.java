@@ -56,6 +56,20 @@ public class DemoService {
 	         logger.info("inside runavs :"+ body);
 	        return body;
 	    }	
+		
+		@POST
+		@Path("/GetIndividualPreVetCode")
+		public String getIndividualPreVetCode(String body) {
+			logger.info("==========  Inside Individual prevet code outbound =========");
+			return body;
+		}
+
+		@POST
+		@Path("/GetEnterprisePreVetCode")
+		public String getEnterprisePreVetCode(String body) throws JsonParseException, JsonMappingException, IOException {
+			logger.info("========== Inside Enterprise prevet outbound  =========");
+			return body;
+		}
 		}
 		
 		
