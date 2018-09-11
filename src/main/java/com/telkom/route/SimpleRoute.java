@@ -8,13 +8,12 @@ import com.telkom.processor.EnterprisePreVetCodeProcessor;
 import com.telkom.processor.IndividualPreVetCodeProcessor;
 import com.telkom.creditvetting.transunion.processor.TransUnionProcessor;
 import com.telkom.processor.AVSResponseProcessor;
+import com.telkom.processor.SaveVettingProcessor;
 import com.telkom.processor.SimpleProcessor;
 
 
 
 public class SimpleRoute extends RouteBuilder{
-
-	
 	
 	Logger log = LoggerFactory.getLogger(SimpleRoute.class);
 	
@@ -44,6 +43,10 @@ public class SimpleRoute extends RouteBuilder{
 		       	 .simple("${headers.operationName} == 'getIndividualPreVetCode'")
 		       	 .process(new IndividualPreVetCodeProcessor())
 		       	 .log("======== exit getIndividualPreVetCode ========")   
+		    .when()
+		       	 .simple("${headers.operationName} == 'savevettingoutcome'")
+		       	 .process(new SaveVettingProcessor())
+		       	 .log("======== exit savevettingoutcome ========")   
 		    .end();
 		
 	}

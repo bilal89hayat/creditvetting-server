@@ -16,63 +16,59 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 
 @Path("/")
 public class DemoService {
-	
 
-	
-		
-		private static Logger logger = LoggerFactory.getLogger(DemoService.class);
-		
-		public DemoService() {
-			
-			logger.info("===================inside demo service constructor=======================");
-		}
+	private static Logger logger = LoggerFactory.getLogger(DemoService.class);
 
+	public DemoService() {
 
-		
-		
-		@POST
-		@Path("/processCreditWorthyResponseTransUnion")
-		public String processCreditWorthyResponseTransUnion(String body) throws JsonParseException, JsonMappingException, IOException {
-			
-			logger.info("========== Inside Demo Post Service processCreditWorthyResponseTransUnion =========");
+		logger.info("===================inside demo service constructor=======================");
+	}
 
-			
-			return body;
-		}
-		@POST
-		@Path("/swaggerPostCall")
-		public String swaggerPostServiceExperian(String Body) throws JsonParseException, JsonMappingException, IOException {
-			
-			logger.info("========== Inside Demo Post Service =========");
+	@POST
+	@Path("/processCreditWorthyResponseTransUnion")
+	public String processCreditWorthyResponseTransUnion(String body)
+			throws JsonParseException, JsonMappingException, IOException {
 
-			
-			return "Success";
-		}
-		
-		@POST
-	    @Path("/runavs")
-	    public String runAVS(String body) {
-	        
-	         logger.info("inside runavs :"+ body);
-	        return body;
-	    }	
-		
-		@POST
-		@Path("/GetIndividualPreVetCode")
-		public String getIndividualPreVetCode(String body) {
-			logger.info("==========  Inside Individual prevet code outbound =========");
-			return body;
-		}
+		logger.info("========== Inside Demo Post Service processCreditWorthyResponseTransUnion =========");
 
-		@POST
-		@Path("/GetEnterprisePreVetCode")
-		public String getEnterprisePreVetCode(String body) throws JsonParseException, JsonMappingException, IOException {
-			logger.info("========== Inside Enterprise prevet outbound  =========");
-			return body;
-		}
-		}
-		
-		
+		return body;
+	}
 
+	@POST
+	@Path("/swaggerPostCall")
+	public String swaggerPostServiceExperian(String Body) throws JsonParseException, JsonMappingException, IOException {
 
+		logger.info("========== Inside Demo Post Service =========");
 
+		return "Success";
+	}
+
+	@POST
+	@Path("/runavs")
+	public String runAVS(String body) {
+
+		logger.info("inside runavs :" + body);
+		return body;
+	}
+
+	@POST
+	@Path("/GetIndividualPreVetCode")
+	public String getIndividualPreVetCode(String body) {
+		logger.info("==========  Inside Individual prevet code outbound =========");
+		return body;
+	}
+
+	@POST
+	@Path("/GetEnterprisePreVetCode")
+	public String getEnterprisePreVetCode(String body) {
+		logger.info("========== Inside Enterprise prevet outbound  =========");
+		return body;
+	}
+
+	@POST
+	@Path("/savevettingoutcome")
+	public String savevettingoutcome(String body) {
+		logger.info("========== Inside save vetting outcome  =========");
+		return body;
+	}
+}
